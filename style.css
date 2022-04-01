@@ -1,0 +1,121 @@
+:root {
+  --primary-color: #f3c625;
+  --secondary-color: #466157;
+  --alternate-color: #c9babb;
+  --text-color: #466157;
+  /* --other-color1: #d81e5b;
+  --other-color2: #06d6a0; */
+  --header-height: 60px;
+}
+* {
+  font-family: "Raleway", sans-serif;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::selection {
+  background: var(--alternate-color);
+}
+::-moz-selection {
+  background: var(--alternate-color);
+}
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 6rem 1rem;
+}
+.logo {
+  width: 8rem;
+}
+ol {
+  list-style-type: none;
+  display: flex;
+  gap: 3rem;
+}
+ol a {
+  text-decoration: none;
+}
+ol a:hover {
+  color: var(--primary-color);
+}
+#home {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+}
+.left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+.left span {
+  transform: translate(8rem, 0);
+  -webkit-transform: translate(8rem, 0);
+  -moz-transform: translate(8rem, 0);
+  -ms-transform: translate(8rem, 0);
+  -o-transform: translate(8rem, 0);
+}
+#code {
+  font-size: 1.5rem;
+}
+#home .left {
+  z-index: 1;
+}
+.right {
+  width: 50%;
+  position: relative;
+  display: flex;
+}
+
+.right .socials {
+  width: 40px;
+  object-fit: cover;
+}
+.right a {
+  position: absolute;
+  z-index: 2;
+}
+.right .s_front {
+  z-index: 2;
+}
+
+.img1 {
+  position: absolute;
+  height: 36rem;
+}
+.name {
+  font-size: 3rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+.role {
+  margin-top: 2px;
+  width: fit-content;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+.right #github {
+  top: 135px;
+  left: 80px;
+}
+.right #instagram {
+  top: 380px;
+  right: 300px;
+}
+.right #twitter {
+  top: 240px;
+  right: 245px;
+}
+.right #linkedin {
+  top: 90px;
+  right: 320px;
+}
+.right #facebook {
+  top: 440px;
+  left: 48px;
+}
