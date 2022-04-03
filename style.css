@@ -59,15 +59,11 @@ ol a:hover {
 .right {
   width: 50%;
   position: relative;
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
 }
 #home .left {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   align-items: end;
 }
 
@@ -89,11 +85,11 @@ ol a:hover {
   width: 40px;
   object-fit: cover;
 }
-.right a {
+#home .right a {
   position: absolute;
   z-index: 2;
 }
-.right .s_front {
+#home .right .s_front {
   z-index: 2;
 }
 
@@ -115,23 +111,23 @@ ol a:hover {
   color: var(--primary-color);
   background-color: var(--secondary-color);
 }
-.right #github {
+#home .right #github {
   top: 135px;
   left: 80px;
 }
-.right #instagram {
+#home .right #instagram {
   top: 380px;
   right: 300px;
 }
-.right #twitter {
+#home .right #twitter {
   top: 240px;
   right: 245px;
 }
-.right #linkedin {
+#home .right #linkedin {
   top: 90px;
   right: 320px;
 }
-.right #facebook {
+#home .right #facebook {
   top: 440px;
   left: 48px;
 }
@@ -330,4 +326,48 @@ ol a:hover {
 /* resume section  */
 #resume {
   background-color: var(--alternate-color);
+}
+#resume .left {
+  justify-content: center;
+  align-items: center;
+}
+#resume .right {
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-image: url("assets/images/rsm.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#resume .right a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.8rem;
+  width: 8rem;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+}
+.download-button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.view-button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.resume-img {
+  height: 80vh;
+  object-fit: contain;
+  border: 2px solid var(--primary-color);
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
 }
