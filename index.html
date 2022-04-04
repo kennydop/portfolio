@@ -15,18 +15,34 @@
   <body>
     <main id="main">
       <header id="header">
-        <a href="#">
-          <img class="logo" src="assets/images/kennydop.png" alt="logo" />
-        </a>
+        <div class="logo-container">
+          <a href="/">kennydop</a>
+          <!-- <img class="logo" src="assets/images/kennydop.png" alt="logo" /> -->
+        </div>
         <nav id="nav" class="nav">
-          <ol>
+          <ul>
             <li class="nav-item"><a href="/">Home</a></li>
             <li class="nav-item"><a href="#about">About</a></li>
             <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
             <li class="nav-item"><a href="#resume">Resume</a></li>
             <li class="nav-item"><a href="#contact">Contact</a></li>
-          </ol>
+          </ul>
         </nav>
+        <label for="check" class="ham-checkbtn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </label>
       </header>
       <section id="home" class="section">
         <div class="left">
@@ -61,14 +77,14 @@
           <a id="facebook" href="https://www.facebook.com/kenydop">
             <img
               class="socials pp"
-              data-speed="6"
+              data-speed="7"
               src="assets/images/facebook.png"
             />
           </a>
           <a id="instagram" href="https://www.instagram.com/kennydop">
             <img
               class="socials pp"
-              data-speed="7"
+              data-speed="6"
               src="assets/images/instagram.png"
             />
           </a>

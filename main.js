@@ -1,6 +1,9 @@
 import "./style.css";
 
 const parallaxImgs = document.querySelectorAll(".pp");
+const hamToggleButton = document.querySelectorAll(".ham-checkbtn")[0];
+const navbarLinks = document.querySelectorAll(".nav")[0];
+
 const parallaxSocials = (e) => {
   parallaxImgs.forEach((parallaxImg) => {
     const speed = parseInt(parallaxImg.getAttribute("data-speed"));
@@ -12,3 +15,6 @@ const parallaxSocials = (e) => {
   });
 };
 document.addEventListener("mousemove", parallaxSocials);
+hamToggleButton.addEventListener("click", () => {
+  navbarLinks.classList.toggle("active");
+});
