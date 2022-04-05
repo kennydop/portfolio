@@ -327,6 +327,11 @@ a {
 }
 #portfolio .move-button.right {
   right: 0.5rem;
+  opacity: 0.2;
+}
+#portfolio .move-button.active {
+  left: 0.2rem;
+  opacity: 1;
 }
 
 #portfolio .move-button svg path {
@@ -369,10 +374,7 @@ a {
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
-.download-button:hover {
-  opacity: 0.85;
-}
-.view-button:hover {
+#resume .right a:hover {
   opacity: 0.85;
 }
 
@@ -390,6 +392,7 @@ a {
 /* contact section */
 
 #contact {
+  flex-direction: column;
   background-color: var(--secondary-color);
   justify-content: center;
   align-items: center;
@@ -397,6 +400,12 @@ a {
   background-repeat: no-repeat;
   background-position: top left;
   background-size: 45%;
+}
+.form-container {
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .mail-form {
   display: flex;
@@ -419,7 +428,7 @@ a {
 
 .mail-form div > input,
 .mail-form div > textarea {
-  width: 35vw;
+  width: 26rem;
   padding: 0.5rem;
   outline: none;
   border: none;
@@ -453,12 +462,8 @@ a {
   color: var(--alternate-color);
 }
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: auto;
   text-align: center;
   padding: 1rem 0;
 }
@@ -614,6 +619,19 @@ a {
     height: 2rem;
     width: 5rem;
   }
+  #resume .right {
+    background-size: 80%;
+  }
+  .resume-img {
+    height: 70vh;
+  }
+  #resume .right a {
+    height: 2.4rem;
+    width: 6.2rem;
+  }
+  #contact {
+    background-size: 55%;
+  }
 }
 @media only screen and (max-width: 800px) {
   section {
@@ -637,6 +655,7 @@ a {
   .projects-container .page {
     justify-content: space-around;
     width: 300vw;
+    padding: 0 0;
   }
   .project-card {
     width: 45vw;
@@ -667,10 +686,12 @@ a {
     width: 5.5rem;
   }
   #portfolio #sp {
-    position: absolute;
     width: 26rem;
     bottom: -1.2rem;
     right: 1.6rem;
+  }
+  .resume-img {
+    height: 65vh;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -739,6 +760,48 @@ a {
   #about {
     font-size: 0.6rem;
   }
+  .project-card {
+    width: 64vw;
+  }
+  #portfolio #sp {
+    width: 20rem;
+    bottom: -1rem;
+    right: 1.3rem;
+  }
+  #resume {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #resume .left {
+    width: 100%;
+  }
+  #resume .right {
+    width: 100%;
+    gap: 0.3rem;
+    padding: 1rem 0.8rem;
+  }
+  #resume .right a {
+    height: 2rem;
+    width: 5.6rem;
+    font-size: 0.8rem;
+  }
+
+  #contact {
+    background-size: 60%;
+  }
+  .mail-form {
+    gap: 0.4rem;
+  }
+  .mail-form div {
+    padding: 0.4rem;
+    border: 0.008rem solid var(--alternate-color);
+  }
+
+  .mail-form div > input,
+  .mail-form div > textarea {
+    width: 20rem;
+  }
 }
 @media only screen and (max-width: 425px) {
   .img1 {
@@ -764,6 +827,35 @@ a {
     -moz-transform: translate(1.2rem, 1.6rem);
     -ms-transform: translate(1.2rem, 1.6rem);
     -o-transform: translate(1.2rem, 1.6rem);
+  }
+  .project-card {
+    width: 88vw;
+  }
+  .chips-container {
+    gap: 0.1rem;
+  }
+  .filter-chip {
+    padding: 0.14rem 0.24rem;
+    font-size: 0.56rem;
+  }
+  #portfolio .move-button {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  #portfolio .move-button.left {
+    left: 0;
+  }
+  #portfolio .move-button.right {
+    right: 0;
+  }
+  #portfolio #sp {
+    width: 16rem;
+    bottom: 0;
+    right: 0.5rem;
+  }
+  .mail-form div > input,
+  .mail-form div > textarea {
+    width: 16rem;
   }
   /*Small smartphones [325px -> 425px]*/
 }
