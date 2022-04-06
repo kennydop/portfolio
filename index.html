@@ -21,11 +21,19 @@
           </div>
           <nav id="nav" class="nav">
             <ul>
-              <li class="nav-item"><a href="/">Home</a></li>
-              <li class="nav-item"><a href="#about">About</a></li>
-              <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
-              <li class="nav-item"><a href="#resume">Resume</a></li>
-              <li class="nav-item"><a href="#contact">Contact</a></li>
+              <li class="nav-item"><a class="navbarLink" href="/">Home</a></li>
+              <li class="nav-item">
+                <a class="navbarLink" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="navbarLink" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="navbarLink" href="#resume">Resume</a>
+              </li>
+              <li class="nav-item">
+                <a class="navbarLink" href="#contact">Contact</a>
+              </li>
             </ul>
           </nav>
           <label for="check" class="ham-checkbtn">
@@ -148,17 +156,17 @@
         <div class="right">
           <span>
             Experienced in tools and technologies like C#, Python, Javascript,
-            Typescript, Dart, Unity, HTML, CSS, React.js, Next.js, Redux.js,
-            Context API, React Native, Flutter, Node.js, Express.js, Jest,
-            RESTful APIs, GraphQL, Bootstrap, TailwindCSS, Firebase, MongoDB,
-            SQL databases, Web Sockets, Git and Github, Docker and Docker
-            Compose.</span
+            Typescript, Dart, Unity, HTML, CSS, Vite, React.js, Next.js,
+            Redux.js, Context API, React Native, Flutter, Node.js, Express.js,
+            Jest, RESTful APIs, GraphQL, Bootstrap, TailwindCSS, Firebase,
+            MongoDB, SQL databases, Web Sockets, Git and Github, Docker and
+            Docker Compose.</span
           >
         </div>
       </section>
       <section id="portfolio">
         <img id="sp" src="assets/images/sp.png" />
-        <button class="move-button left">
+        <button class="move-button mbleft">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -173,111 +181,189 @@
             />
           </svg>
         </button>
-        <div class="projects-container">
-          <div class="page">
-            <div class="project-card">
-              <img src="assets/images/fsco.png" />
-              <div class="card-lower">
-                <h3 class="project-name">Campus Online</h3>
-                <div class="chips-container">
-                  <div class="filter-chip">Next.js</div>
-                  <div class="filter-chip">MongoDB</div>
-                  <div class="filter-chip">Express.js</div>
-                  <div class="filter-chip">Cloudinary</div>
-                  <div class="filter-chip">· · ·</div>
+        <div class="pview">
+          <div class="projects-container">
+            <div class="page">
+              <div class="project-card">
+                <img src="assets/images/fsco.png" />
+                <div class="card-lower">
+                  <h3 class="project-name">Campus Online</h3>
+                  <div class="chips-container">
+                    <div class="filter-chip">Next.js</div>
+                    <div class="filter-chip">MongoDB</div>
+                    <div class="filter-chip">Express.js</div>
+                    <div class="filter-chip">Cloudinary</div>
+                    <div class="filter-chip">· · ·</div>
+                  </div>
+                  <div class="description">
+                    A responsive social space for college students featuring
+                    lots of features like creating, commenting, liking, deleting
+                    a post (posts can be an ad, poll, picture, video, or text.
+                    anonymous posts are supported), following and unfollowing
+                    users, configuring user accounts and preferences, realtime
+                    chat and notifications.
+                  </div>
+                  <div class="buttons-wrapper">
+                    <a
+                      target="_blank"
+                      href="https://campus-online.vercel.app/"
+                      class="preview"
+                    >
+                      Preview
+                    </a>
+                    <a
+                      href="https://github.com/kennydop/campus-online"
+                      target="_blank"
+                      class="repo"
+                      >Github Repo</a
+                    >
+                  </div>
                 </div>
-                <div class="description">
-                  A social space for college students featuring lots of features
-                  like creating, commenting, liking, deleting a post (posts can
-                  be an ad, poll, picture, video or text. anonymous posts
-                  supported too), following and unfollowing users, configuring
-                  user accounts and preferences, realtime chat and
-                  notifications. (Mobile Friendly)
+              </div>
+              <div class="project-card">
+                <img src="assets/images/uc.png" />
+                <div class="card-lower">
+                  <h3 class="project-name">Uchow*</h3>
+                  <div class="chips-container">
+                    <div class="filter-chip">Flutter</div>
+                    <div class="filter-chip">PostgreSQL</div>
+                    <div class="filter-chip">Express.js</div>
+                    <div class="filter-chip">Docker</div>
+                    <div class="filter-chip">· · ·</div>
+                  </div>
+                  <div class="description">
+                    Cross-platform on-demand food ordering and delivery app.
+                    Order from a great selection of your favorite local and
+                    national restaurants or fast foods and get food delivered to
+                    you wherever you are.
+                  </div>
+                  <div class="buttons-wrapper">
+                    <a
+                      href="https://github.com/kennydop/uchow"
+                      target="_blank"
+                      class="repo"
+                      >Github Repo</a
+                    >
+                  </div>
                 </div>
-                <div class="buttons-wrapper">
-                  <a
-                    target="_blank"
-                    href="https://campus-online.vercel.app/"
-                    class="preview"
-                  >
-                    Preview
-                  </a>
-                  <a
-                    href="https://github.com/kennydop/campus-online"
-                    target="_blank"
-                    class="repo"
-                    >Github Repo</a
-                  >
+              </div>
+              <div class="project-card">
+                <img src="assets/images/cortca.png" />
+                <div class="card-lower">
+                  <h3 class="project-name">Realtime Chat App</h3>
+                  <div class="chips-container">
+                    <div class="filter-chip">Next.js</div>
+                    <div class="filter-chip">MongoDB</div>
+                    <div class="filter-chip">Express.js</div>
+                    <div class="filter-chip">Socket.io</div>
+                    <div class="filter-chip">· · ·</div>
+                  </div>
+                  <div class="description">
+                    A realtime time communication web application with basic
+                    messaging needs built for Campus Online with web sockets.
+                  </div>
+                  <div class="buttons-wrapper">
+                    <a
+                      href="https://campus-online.vercel.app/chats"
+                      target="_blank"
+                      class="preview"
+                      >Preview</a
+                    >
+                    <a
+                      href="https://github.com/kennydop/campus-online"
+                      target="_blank"
+                      class="repo"
+                      >Github Repo</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="project-card">
-              <img src="assets/images/cd.png" />
-              <div class="card-lower">
-                <h3 class="project-name">Coro Dash</h3>
-                <div class="chips-container">
-                  <div class="filter-chip">Unity</div>
-                  <div class="filter-chip">Google Play Services</div>
-                </div>
-                <div class="description">
-                  Coro Dash is an endless 2d game, where you try your best to
-                  avoid viruses coming at you. Stay longer in the game to move
-                  up the leaderboard to compete with people all over the world.
-                  Keep building your points to unlock and play with sensational
-                  African rapper Kwesi Arthur.
-                </div>
-                <div class="buttons-wrapper">
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.trayl.corodash"
-                    target="_blank"
-                    class="preview"
-                  >
-                    Preview</a
-                  >
-                  <a
-                    href="https://github.com/kennydop/Coro_Dash"
-                    target="_blank"
-                    class="repo"
-                  >
-                    Github Repo
-                  </a>
+            <div class="page">
+              <div class="project-card">
+                <img src="assets/images/cd.png" />
+                <div class="card-lower">
+                  <h3 class="project-name">Coro Dash</h3>
+                  <div class="chips-container">
+                    <div class="filter-chip">Unity</div>
+                    <div class="filter-chip">C#</div>
+                    <div class="filter-chip">Google Play Services</div>
+                  </div>
+                  <div class="description">
+                    Coro Dash is an endless 2d game, where you try your best to
+                    avoid viruses coming at you. Stay longer in the game to move
+                    up the leaderboard to compete with people all over the
+                    world. Keep building your points to unlock and play with
+                    sensational African rapper Kwesi Arthur.
+                  </div>
+                  <div class="buttons-wrapper">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.trayl.corodash"
+                      target="_blank"
+                      class="preview"
+                    >
+                      Preview</a
+                    >
+                    <a
+                      href="https://github.com/kennydop/Coro_Dash"
+                      target="_blank"
+                      class="repo"
+                    >
+                      Github Repo
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="project-card">
-              <img src="assets/images/cortca.png" />
-              <div class="card-lower">
-                <h3 class="project-name">Realtime Chat App</h3>
-                <div class="chips-container">
-                  <div class="filter-chip">Next.js</div>
-                  <div class="filter-chip">MongoDB</div>
-                  <div class="filter-chip">Express.js</div>
-                  <div class="filter-chip">Socket.io</div>
-                  <div class="filter-chip">· · ·</div>
+              <div class="project-card">
+                <img src="assets/images/mr.png" />
+                <div class="card-lower">
+                  <h3 class="project-name">Mazerex*</h3>
+                  <div class="chips-container">
+                    <div class="filter-chip">Unity</div>
+                    <div class="filter-chip">C#</div>
+                  </div>
+                  <div class="description">
+                    Think you're the mastermind of puzzles? Wait till you try
+                    the arduous level of Mazerex. It's a decision-making race
+                    against time. Solve mazes early for more points and ratings.
+                  </div>
+                  <div class="buttons-wrapper">
+                    <a
+                      href="https://github.com/kennydop/mazerex"
+                      target="_blank"
+                      class="repo"
+                    >
+                      Github Repo
+                    </a>
+                  </div>
                 </div>
-                <div class="description">
-                  A realtime time communication web application with basic
-                  messaging needs built for Campus Online with web sockets
-                </div>
-                <div class="buttons-wrapper">
-                  <a
-                    href="https://campus-online.vercel.app/chats"
-                    target="_blank"
-                    class="preview"
-                    >Preview</a
-                  >
-                  <a
-                    href="https://github.com/kennydop/campus-online"
-                    target="_blank"
-                    class="repo"
-                    >Github Repo</a
-                  >
+              </div>
+              <div class="project-card">
+                <img src="assets/images/o.gif" />
+                <div class="card-lower">
+                  <h3 class="project-name">More</h3>
+                  <div class="chips-container">
+                    <div class="filter-chip">React Native</div>
+                    <div class="filter-chip">Python</div>
+                    <div class="filter-chip">Unity</div>
+                    <div class="filter-chip">Node.js</div>
+                    <div class="filter-chip">· · ·</div>
+                  </div>
+                  <div class="description">Other games/software/bots</div>
+                  <div class="buttons-wrapper">
+                    <a
+                      href="https://github.com/kennydop/"
+                      target="_blank"
+                      class="repo"
+                      >Github</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <button class="move-button right">
+        <button class="move-button mbright">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -312,15 +398,15 @@
       </section>
       <section id="contact">
         <div class="form-container">
-          <form action="" class="mail-form">
+          <form action="none" class="mail-form">
             <div>
-              <input name="name" id="name" type="text" placeholder="Name" />
+              <!-- <input name="name" id="name" type="text" placeholder="Name" />
               <input
                 name="email"
                 id="email-address"
                 type="email"
                 placeholder="Email"
-              />
+              /> -->
               <input
                 name="subject"
                 id="subject"
@@ -334,7 +420,7 @@
                 placeholder="Message"
               ></textarea>
             </div>
-            <input id="form-submit" type="submit" value="Send" />
+            <a id="form-submit">Send</a>
           </form>
         </div>
         <footer class="footer">
