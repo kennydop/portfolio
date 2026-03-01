@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --canvas: #EDE0D4;
+  --carbon: #2C1810;
+  --safety-orange: #B85C38;
+  --mid-grey: #9C8E82;
+  --terminal-dark: #1A100A;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-carbon: var(--carbon);
+  --color-safety-orange: var(--safety-orange);
+  --color-mid-grey: var(--mid-grey);
+  --color-terminal-dark: var(--terminal-dark);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  background: var(--canvas);
+  color: var(--carbon);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Background grid pattern */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(44, 24, 16, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(44, 24, 16, 0.06) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Dot pattern overlay */
+.bg-dots {
+  background-image: radial-gradient(circle, var(--safety-orange) 0.5px, transparent 0.5px);
+  background-size: 240px 240px;
+  opacity: 0.04;
+}
+
+/* Noise overlay */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Status blink */
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-pulse-dot {
+  animation: blink-dot 1.5s ease-in-out infinite;
+}
+
+/* Rotating border for project cards */
+@keyframes rotate-border {
+  0% { --border-angle: 0deg; }
+  100% { --border-angle: 360deg; }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.rotating-border {
+  animation: rotate-border 10s linear infinite;
+  border-image: conic-gradient(from var(--border-angle), transparent 25%, var(--safety-orange) 50%, transparent 75%) 1;
+}
+
+/* Scroll indicator animation */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--safety-orange);
+  color: white;
+}
+

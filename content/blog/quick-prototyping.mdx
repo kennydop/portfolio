@@ -1,0 +1,171 @@
+---
+title: "Quick Prototyping"
+image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QNkPxqvl1EE0ydr-AtibCA.avif"
+date: "2026-01-01"
+description: "Prove the idea works before optimizing or perfecting the code."
+tags: ["development", "philosophy"]
+---
+
+When I’m prototyping, my goal is simple: **prove the idea works before I fall in love with it**.
+Not perfect code. Just enough to learn something.
+
+This is hard for me, especially because I enjoy clean design and solid architecture. Left unchecked, I’ll spend hours on theme, spacing, naming, or edge cases no user will ever hit. Rapid prototyping is how I fight that instinct.
+
+## **Start with clarity**
+
+Before I open an editor, I try to answer a few questions in plain language:
+
+- What problem am I solving?
+- Who is this for?
+- What is the one thing this app must do well?
+- How do I get users?
+
+If I can’t explain the product in one or two sentences, I’m not ready to build. Code won’t save unclear thinking.
+
+I usually write a very small PRD. Just the goal, the main user flow, and how I’ll know it’s working. This alone prevents a lot of wasted effort.
+
+## Build the skeleton first
+
+I don’t start by building features. I start by building **structure**.
+
+That means:
+
+- routing
+- basic layout
+- data flow
+- folder structure
+- naming conventions
+
+No business logic or abstractions yet. This gives the project a backbone. Once that’s in place, everything else moves faster and stays less chaotic.
+
+## Start from a bootstrapped template
+
+I rarely start from a blank project anymore.
+
+A good starter or template already has the boring parts done:
+
+- project structure
+- auth or basic user model (even if unused)
+- linting, formatting, env setup
+- routing and layout
+- basic config
+
+This saves hours on day one and reduces decision fatigue.
+
+The key is not to fight the template. Remove what you don’t need, keep what helps, and move on. We are focused on speed, not elegance. If you’re building fast, a slightly opinionated setup is better than endless setup freedom.
+
+## Use a UI library. Always.
+
+I no longer debate this.
+
+Buttons, inputs, modals, tables, … I don’t want to think about them. A good UI library removes hundreds of tiny decisions that add no value at the prototype stage.
+
+This doesn’t mean your product will look generic forever. It just means you’re not wasting time solving solved problems.
+
+I remind myself, “Users care about value, not whether my border radius is unique.”
+
+## Fight the urge for pixel perfection
+
+This is where I struggle the most.
+
+I’ll adjust spacing. Then colors. Then font weights. Then responsiveness. Suddenly, two hours are gone and nothing meaningful changed.
+
+So I now force a rule:
+
+- Is this blocking user understanding? Fix it.
+- Is this cosmetic? Ignore it.
+
+Pixel perfection comes after validation, not before.
+Design polish is a reward for proven demand.
+
+## Don’t build everything at once, structure for change
+
+I don’t try to ship every possible future feature in version one. Instead, I structure the project so adding things later doesn’t feel painful.
+
+That means I don’t build:
+
+- plugin systems
+- event buses
+- heavy domain layers
+
+But I do:
+
+- keep boundaries clear between features
+- name files and functions based on what they do, not what they might become
+- keep functions small and replaceable
+- avoid hard-coded assumptions that lock me into one flow
+- isolate parts that may change (auth, payments, integrations)
+- leave short comments where future extensions are obvious
+
+I want to be able to add new features, external services/providers, and even different tools without needing a rewrite.
+
+## Choose what you already know
+
+This is underrated.
+
+Shiny tech is fun, but familiarity wins when speed matters. When I use tools I already understand:
+
+- I debug faster
+- I write fewer bugs
+- I make better decisions
+
+You can always rewrite. You can’t get back wasted time.
+
+## Where AI actually helps me
+
+AI is not where I start. It’s where I accelerate.
+
+Once the structure exists, AI becomes very useful:
+
+- drafting PRDs
+- refining flows
+- generating boilerplate
+- writing tests
+- spotting bugs
+
+But only if I have a **clear workflow**.
+
+An example flow that works for me:
+
+- Use one tool to clarify the idea and specs
+- Use a coding assistant to help implement parts faster
+- Use a bug-focused tool to review and catch issues
+
+I also keep:
+
+- rules
+- guidelines
+- project context
+- folder structure docs
+
+This makes AI responses more accurate and less chaotic.
+
+## Documentation is leverage
+
+Light documentation saves heavy refactors.
+
+I usually keep:
+
+- a PRD
+- a simple flow diagram
+- a structure doc (folders, APIs, contracts)
+- a list of assumptions
+
+## Validate early, then decide
+
+Once the prototype works end-to-end, I stop building.
+
+I put it in front of users. I watch them. I listen.
+
+Only after validation do I decide:
+
+- polish UI
+- refactor architecture
+- add features
+- or kill the idea
+
+Fast prototyping isn’t about being sloppy.
+It’s about being **honest with time**.
+
+Build the smallest thing that can teach you something real.
+Everything else is noise.

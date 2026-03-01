@@ -1,0 +1,185 @@
+---
+title: "How to Create an Executable .jar File for JavaFX Using Maven"
+image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*3eVjY3u-QEj0HkZ-euorrg.png"
+date: "2023-09-02"
+description: "A step-by-step guide to packaging JavaFX applications into executable JAR files using Maven and the Shade plugin."
+tags: ["java", "javafx", "maven", "tutorial"]
+---
+
+![captionless image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*3eVjY3u-QEj0HkZ-euorrg.png)
+
+## **Introduction**
+
+You’re probably in a situation where you’ve written a great piece of software, tested it rigorously, and are now facing the daunting task of turning your masterpiece into something that can be executed with a double-click.
+
+When I first delved into this, I found myself stuck in a labyrinth of outdated tutorials, confusing stack overflow answers, and documentation that seemed like it was written for someone with years of experience in Java deployment. I was searching for a straightforward guide to creating an executable `.jar` file and the journey was anything but simple.
+
+That’s why I decided to write this article, to save you the hours of headache that I had to go through. Whether you’re a beginner or someone who just needs a refresher, this step-by-step guide is for you.
+
+This tutorial will focus on using Java 11 or later, JavaFX, and Maven for dependency management.
+
+## Pre-requisites
+
+1.  Your JavaFX application can run from the command line or IDE, but nothing happens when you double-click or open the `.jar` build.
+2.  You are using Java Development Kit (JDK) 11 or later
+3.  You are using Maven for dependency management.
+
+## Building the Executable .jar File
+
+### 1. Create a New ‘Main’ Class
+
+Before we delve into creating the executable `.jar` file, you need to make a slight modification in your code structure. You’ll need to create a new class that will run the main function of your existing main class. This is particularly important for JavaFX applications.
+
+Here’s how you do it:
+
+**`Main.java` (New Class)**
+
+Create a new Java class in your project and name it Main. Add the following code to this class:
+
+```
+package your.package.name;
+public class Main {
+ public static void main(String[] args) {
+ App.main(args);
+ }
+}
+```
+
+This class simply calls the main function of your existing App class.
+
+**`App.java`** (Previous Main Class)
+
+In case you’re wondering, here’s what your existing App class might look like:
+
+```
+package your.package.name;
+import java.io.IOException;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+/**
+ * JavaFX App
+ */
+public class App extends Application {
+  private static Scene scene;
+  @Override
+   public void init() {
+   }
+
+   @Override
+   public void start(Stage stage) throws IOException {
+   scene = new Scene(loadFXML("app"), 800, 600);
+   scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+   stage.setScene(scene);
+   stage.setTitle("My App");
+   stage.show();
+   }
+   static void setRoot(String fxml) throws IOException {
+     scene.setRoot(loadFXML(fxml));
+   }
+   private static Parent loadFXML(String fxml) throws IOException {
+     FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+     return fxmlLoader.load();
+   }
+   public static void main(String[] args) {
+     launch();
+   }
+}
+```
+
+With this new **Main** class in place, you’ve set the stage to create an executable `.jar` file that will launch your JavaFX application.
+
+### 2. Update Your Maven pom.xml File
+
+The next step is to include the **Maven Shade Plugin** in your **`pom.xml`** configuration file. This plugin is essential for packaging the artifact in an uber-jar, including its dependencies and resources, and thus makes it executable. Here’s how to do it:
+Open your `pom.xml` file and add the following code snippet for the Maven Shade Plugin:
+
+```
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>LATEST VERSION HERE</version>
+    <executions>
+      <execution>
+        <phase>package</phase>
+        <goals>
+          <goal>shade</goal>
+        </goals>
+        <configuration>
+          <transformers>
+            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+              <mainClass>your.package.name.Main</mainClass>
+            </transformer>
+          </transformers>
+        </configuration>
+      </execution>
+    </executions>
+</plugin>
+```
+
+Ensure you replace `your.package.name.Main` with the fully qualified name of your new Main class and `LATEST VERSION HERE` with the latest version of the Maven Shade Plugin, for example: `3.5.0` .
+
+Your Final pom.xml Should Look Like This:
+
+```
+<!-- ... existing content ... -->
+<build>
+  <plugins>
+    <!-- ... existing plugins ... -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-shade-plugin</artifactId>
+      <version>3.5.0</version>
+      <executions>
+        <execution>
+          <phase>package</phase>
+          <goals>
+            <goal>shade</goal>
+          </goals>
+          <configuration>
+            <transformers>
+              <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                <mainClass>com.example.Main</mainClass>
+              </transformer>
+            </transformers>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
+<!-- ... existing content ... -->
+```
+
+### 3. Building and Testing the .jar File
+
+**Cleaning the Project:** Open your terminal and navigate to your project directory. Run the following command to clean any previous builds:
+
+```
+mvn clean
+```
+
+**Testing the New Main Class:** Before proceeding further, ensure that your new Main class can run the application correctly. You can do this by running your project from your IDE or using the Maven command `mvn javafx:run`.
+
+**Building the .jar File:** If everything works as expected, go back to your terminal and run:
+
+```
+mvn install
+```
+
+This command will compile your code, download any required dependencies, and package everything into a `.jar` file.
+
+**Locating the .jar Files:** After running `mvn install`, you’ll find two `.jar` files in the target directory of your project:
+
+1. `your-artifact-id-version.jar`
+2. `your-artifact-id-version-shaded.jar`
+   The second `.jar` file, which ends in -shaded, is the one you’re interested in. This is the executable `.jar` file that includes all your project’s dependencies.
+
+Now navigate to the target directory in your project folder and double-click the `.jar` file that ends in `-shaded`. Your JavaFX application should launch and run as expected, confirming that you’ve successfully created an executable `.jar` file.
+
+## You Did It! 🎉
+
+Congratulations, you’ve just built an executable `.jar` file for your **JavaFX** application! You can now distribute this `.jar` file, allowing users to run your application with just a double-click — No technical fuss involved.
+For a step-by-step visual guide, you can also check out this helpful [YouTube video](https://youtu.be/EyYb0GmtEX4?si=sT38CKiJ-4yiwl0Q).
