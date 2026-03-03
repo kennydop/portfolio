@@ -1,10 +1,10 @@
 import BackgroundPattern from "@/components/BackgroundPattern";
 import ScrollProgress from "@/components/ScrollProgress";
 import Hero from "@/components/Hero";
-import PlayerProfile from "@/components/PlayerProfile";
+import About from "@/components/About";
 import TechStack from "@/components/TechStack";
-import SystemLog from "@/components/SystemLog";
-import Prototypes from "@/components/Prototypes";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
@@ -15,10 +15,10 @@ export default function Home() {
       <ScrollProgress />
       <main className="relative z-10">
         <Hero />
-        <PlayerProfile />
+        <About />
         <TechStack />
-        <SystemLog />
-        <Prototypes />
+        <Experience />
+        <Projects />
         <ContactForm />
       </main>
       <Footer />

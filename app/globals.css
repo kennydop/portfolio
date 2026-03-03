@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #EDE0D4;
-  --carbon: #2C1810;
-  --safety-orange: #B85C38;
-  --mid-grey: #9C8E82;
-  --terminal-dark: #1A100A;
+  --canvas: #ede0d4;
+  --carbon: #2c1810;
+  --safety-orange: #b85c38;
+  --mid-grey: #9c8e82;
+  --terminal-dark: #1a100a;
 }
 
 @theme inline {
@@ -14,14 +14,26 @@
   --color-safety-orange: var(--safety-orange);
   --color-mid-grey: var(--mid-grey);
   --color-terminal-dark: var(--terminal-dark);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-body);
+  --font-funnel-display: var(--font-funnel-display);
 }
 
-body {
-  background: var(--canvas);
-  color: var(--carbon);
-  font-family: var(--font-sans), system-ui, sans-serif;
+@layer base {
+  body {
+    background: var(--canvas);
+    color: var(--carbon);
+    font-family: var(--font-body), monospace;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-title), serif;
+  }
 }
 
 /* Background grid pattern */
@@ -34,7 +46,11 @@ body {
 
 /* Dot pattern overlay */
 .bg-dots {
-  background-image: radial-gradient(circle, var(--safety-orange) 0.5px, transparent 0.5px);
+  background-image: radial-gradient(
+    circle,
+    var(--safety-orange) 0.5px,
+    transparent 0.5px
+  );
   background-size: 240px 240px;
   opacity: 0.04;
 }
@@ -48,8 +64,13 @@ body {
 
 /* Status blink */
 @keyframes blink-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .animate-pulse-dot {
@@ -58,8 +79,12 @@ body {
 
 /* Rotating border for project cards */
 @keyframes rotate-border {
-  0% { --border-angle: 0deg; }
-  100% { --border-angle: 360deg; }
+  0% {
+    --border-angle: 0deg;
+  }
+  100% {
+    --border-angle: 360deg;
+  }
 }
 
 @property --border-angle {
@@ -70,13 +95,24 @@ body {
 
 .rotating-border {
   animation: rotate-border 10s linear infinite;
-  border-image: conic-gradient(from var(--border-angle), transparent 25%, var(--safety-orange) 50%, transparent 75%) 1;
+  border-image: conic-gradient(
+      from var(--border-angle),
+      transparent 25%,
+      var(--safety-orange) 50%,
+      transparent 75%
+    )
+    1;
 }
 
 /* Scroll indicator animation */
 @keyframes bounce-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
 }
 
 .animate-bounce-slow {
@@ -89,3 +125,12 @@ body {
   color: white;
 }
 
+@layer utilities {
+  .font-title {
+    font-family: var(--font-title), serif;
+  }
+
+  .font-funnel-display {
+    font-family: var(--font-funnel-display), sans-serif;
+  }
+}

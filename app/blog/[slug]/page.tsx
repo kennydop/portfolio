@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getAllPosts, getFirstImageFromContent, getPostBySlug } from "@/lib/blog";
+import { baseUrl } from "@/lib/site";
 import type { MDXComponents } from "mdx/types";
 import type { ComponentPropsWithoutRef } from "react";
 
@@ -94,25 +95,30 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return {};
 
+  const url = `${baseUrl}/blog/${slug}`;
+  const rawImage = post.image ?? getFirstImageFromContent(post.content);
+  const imageUrl = rawImage
+    ? rawImage.startsWith("http")
+      ? rawImage
+      : `${baseUrl}${rawImage.startsWith("/") ? "" : "/"}${rawImage}`
+    : undefined;
   return {
-    title: `${post.title} — Patrick Offei Danso`,
+    title: post.title,
     description: post.description,
+    alternates: { canonical: url },
     openGraph: {
+      url,
       title: post.title,
       description: post.description,
       type: "article",
       publishedTime: post.date,
-      ...(post.image && {
-        images: [{ url: post.image }],
-      }),
+      ...(imageUrl && { images: [{ url: imageUrl }] }),
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      ...(post.image && {
-        images: [post.image],
-      }),
+      ...(imageUrl && { images: [imageUrl] }),
     },
   };
 }

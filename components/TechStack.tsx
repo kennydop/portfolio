@@ -1,4 +1,4 @@
-import { TECH_STACK } from "@/lib/constants";
+import { TECH_STACK, DOMAINS } from "@/lib/constants";
 
 export default function TechStack() {
   return (
@@ -8,7 +8,7 @@ export default function TechStack() {
           <span className="font-mono text-sm tracking-widest text-safety-orange uppercase">
             02
           </span>{" "}
-          TECH_STACK
+          SPELLBOOK
         </h2>
 
         <div className="mt-12 space-y-4">
@@ -26,7 +26,7 @@ export default function TechStack() {
                   {unit.label}
                 </span>
                 <div className="ml-auto flex gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-carbon/10" />
                   <span className="h-1.5 w-1.5 rounded-full bg-carbon/10" />
                   <span className="h-1.5 w-1.5 rounded-full bg-carbon/10" />
                 </div>
@@ -37,7 +37,7 @@ export default function TechStack() {
                 {unit.items.map((item) => (
                   <span
                     key={item}
-                    className="font-mono text-[10px] md:text-xs tracking-wider text-mid-grey px-3 py-1.5 border border-carbon/10 transition-colors duration-300 hover:border-safety-orange/40 hover:text-carbon"
+                    className="cursor-default font-mono text-[10px] md:text-xs tracking-wider text-mid-grey px-3 py-1.5 border border-carbon/10 transition-colors duration-300 hover:border-safety-orange/40 hover:text-carbon"
                   >
                     {item}
                   </span>

@@ -1,9 +1,24 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
+import { baseUrl } from "@/lib/site";
 
 export const metadata = {
-  title: "Blog — Patrick Offei Danso",
-  description: "Thoughts on software engineering, prototyping, and building products.",
+  title: "Blog",
+  description:
+    "Thoughts on software engineering, prototyping, and building products. Articles on full-stack development, game development, AI, and building in public.",
+  alternates: { canonical: `${baseUrl}/blog` },
+  openGraph: {
+    title: "Blog | Patrick Offei Danso",
+    description:
+      "Thoughts on software engineering, prototyping, and building products.",
+    url: "/blog",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Patrick Offei Danso",
+    description:
+      "Thoughts on software engineering, prototyping, and building products.",
+  },
 };
 
 export default function BlogPage() {
@@ -21,14 +36,11 @@ export default function BlogPage() {
             href="/"
             className="font-mono text-[10px] uppercase tracking-[0.25em] text-mid-grey transition-colors duration-300 hover:text-carbon inline-block mb-8"
           >
-            &larr; BACK_TO_BASE
+            &larr; BACK TO DOCKING BAY
           </Link>
           <h1 className="text-4xl md:text-5xl font-black tracking-tight text-carbon">
-            BLOG
+            SCROLLS
           </h1>
-          <p className="mt-4 font-mono text-xs tracking-widest text-mid-grey uppercase">
-            TRANSMISSION_LOG — {posts.length} ENTRIES
-          </p>
         </div>
 
         {/* Post grid */}

@@ -38,9 +38,9 @@ export default function ContactForm() {
               GET IN TOUCH
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-carbon leading-tight">
-              Let&apos;s work
+              SUMMON
               <br />
-              together.
+              ME
             </h2>
             <p className="mt-6 text-base md:text-lg text-carbon/50 leading-relaxed max-w-md">
               Have a project in mind or want to collaborate? Send me a message
