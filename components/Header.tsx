@@ -133,7 +133,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="text-xs md:text-sm font-bold tracking-wider text-carbon font-funnel-display"
+          className="text-xs md:text-sm font-bold tracking-wider text-safety-orange font-funnel-display"
         >
           kennydop
         </Link>

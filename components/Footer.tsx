@@ -3,18 +3,6 @@ import { PERSONAL } from "@/lib/constants";
 export default function Footer() {
   return (
     <footer className="relative z-10">
-      {/* "End of line" divider */}
-      <div className="mx-auto max-w-7xl px-6 py-6">
-        <div className="flex items-center justify-between">
-          <span className="font-mono text-[10px] tracking-widest text-carbon/30 uppercase">
-            END OF LINE
-          </span>
-          <span className="font-mono text-[10px] tracking-widest text-carbon/30 uppercase">
-            EST. {PERSONAL.established} — 2026
-          </span>
-        </div>
-      </div>
-
       {/* Dark section */}
       <div className="bg-carbon text-white">
         <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
@@ -87,6 +75,36 @@ export default function Footer() {
                     />
                   </svg>
                 </a>
+                <a
+                  href={PERSONAL.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/40 hover:text-white transition-colors duration-300"
+                  aria-label="Instagram"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm10.25 1.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z" />
+                  </svg>
+                </a>
+                <a
+                  href={PERSONAL.medium}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/40 hover:text-white transition-colors duration-300"
+                  aria-label="Medium"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M0 0v24h24V0H0zm19.938 5.686L18.651 6.92a.376.376 0 0 0-.143.362v9.067a.376.376 0 0 0 .143.361l1.257 1.234v.271h-6.322v-.27l1.302-1.265c.128-.128.128-.165.128-.36V8.99l-3.62 9.195h-.49L6.69 8.99v6.163a.85.85 0 0 0 .233.707l1.694 2.054v.271H3.815v-.27L5.51 15.86a.82.82 0 0 0 .218-.707V8.027a.624.624 0 0 0-.203-.527L4.019 5.686v-.27h4.674l3.613 7.923 3.176-7.924h4.456v.271z" />
+                  </svg>
+                </a>
               </div>
             </div>
 
@@ -126,8 +144,8 @@ export default function Footer() {
             <span className="font-mono text-[10px] tracking-widest text-white/20">
               &copy; {PERSONAL.established}-2026 kennydop
             </span>
-            <span className="font-mono text-[10px] tracking-widest text-white/20 uppercase">
-              ALL RIGHTS RESERVED
+            <span className="font-mono text-[10px] tracking-widest text-white/20">
+              All Rights Reserved
             </span>
           </div>
         </div>

@@ -11,6 +11,7 @@ export const PERSONAL = {
   linkedin: "https://linkedin.com/in/kennydop",
   twitter: "https://x.com/kennydop_",
   instagram: "https://instagram.com/kennydop",
+  medium: "https://medium.com/@kennydop",
   discord: "https://discord.com/users/kennydop",
   resumeUrl: "/Patrick_Offei_Danso_Resume.pdf",
   status: "BUILDING",
@@ -27,7 +28,7 @@ export const ABOUT = {
     degree: "BSc. Computer Science",
     institution: "University of Cape Coast",
   },
-  languages: ["English (Fluent)", "Gua", "Twi"],
+  languages: ["English", "Gua", "Twi"],
   focus: [
     "Full-Stack Development",
     "AI Integration",

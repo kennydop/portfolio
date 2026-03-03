@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getAllPosts, getFirstImageFromContent, getPostBySlug } from "@/lib/blog";
+import {
+  getAllPosts,
+  getFirstImageFromContent,
+  getPostBySlug,
+} from "@/lib/blog";
 import { baseUrl } from "@/lib/site";
 import type { MDXComponents } from "mdx/types";
 import type { ComponentPropsWithoutRef } from "react";
@@ -43,7 +47,10 @@ const mdxComponents: MDXComponents = {
     <ol className="list-decimal pl-6 mb-5 space-y-2" {...props} />
   ),
   li: (props: ComponentPropsWithoutRef<"li">) => (
-    <li className="text-base leading-[1.8] text-carbon/80 marker:text-safety-orange" {...props} />
+    <li
+      className="text-base leading-[1.8] text-carbon/80 marker:text-safety-orange"
+      {...props}
+    />
   ),
   strong: (props: ComponentPropsWithoutRef<"strong">) => (
     <strong className="font-semibold text-carbon" {...props} />
@@ -142,7 +149,7 @@ export default async function BlogPostPage({
           href="/blog"
           className="font-mono text-[10px] uppercase tracking-[0.25em] text-mid-grey transition-colors duration-300 hover:text-carbon inline-block mb-8"
         >
-          &larr; BACK_TO_LOG
+          &larr; BACK TO SCROLLS
         </Link>
 
         {/* Post header */}
