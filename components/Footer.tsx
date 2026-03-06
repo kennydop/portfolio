@@ -142,7 +142,7 @@ export default function Footer() {
         <div className="border-t border-white/10">
           <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <span className="font-mono text-[10px] tracking-widest text-white/20">
-              &copy; {PERSONAL.established}-2026 kennydop
+              &copy; {new Date().getFullYear()} kennydop
             </span>
             <span className="font-mono text-[10px] tracking-widest text-white/20">
               All Rights Reserved

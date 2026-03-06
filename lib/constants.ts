@@ -17,7 +17,6 @@ export const PERSONAL = {
   status: "BUILDING",
   load: "80%",
   uptime: "99.9%",
-  established: "2021",
 };
 
 export const ABOUT = {
