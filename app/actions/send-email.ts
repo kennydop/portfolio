@@ -21,7 +21,7 @@ export async function sendEmail(formData: FormData): Promise<SendEmailResult> {
 
   try {
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "portfolio@kennydop.com",
       to: "dansooffeipatrick@gmail.com",
       subject: `[Portfolio] ${subject}`,
       replyTo: email,
@@ -30,6 +30,9 @@ export async function sendEmail(formData: FormData): Promise<SendEmailResult> {
 
     return { success: true };
   } catch {
-    return { success: false, error: "Failed to send message. Please try again." };
+    return {
+      success: false,
+      error: "Failed to send message. Please try again.",
+    };
   }
 }
