@@ -70,6 +70,12 @@ export const metadata: Metadata = {
       "Software Engineer specializing in full-stack development, AI integrations, and interactive game experiences.",
     images: ["/i_am_god.jpg"],
   },
+  verification: {
+    other: {
+      "websitelaunches-verification":
+        "5f94a34f16a93c529af1b32e69becf9e",
+    },
+  },
 };
 
 export default function RootLayout({
