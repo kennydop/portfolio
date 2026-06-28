@@ -265,6 +265,7 @@ export interface Experience {
   period: string;
   // description: string;
   type: "work" | "education";
+  location: string;
 }
 
 export const EXPERIENCE: Experience[] = [
@@ -273,30 +274,35 @@ export const EXPERIENCE: Experience[] = [
     role: "Software Engineer",
     period: "Nov 2024 – Present",
     type: "work",
+    location: "Smyrna, United States - Remote",
   },
   {
     company: "My Creativity Box",
     role: "Software Engineer",
     period: "Jan 2023 – Feb 2025",
     type: "work",
+    location: "Auckland, New Zealand - Remote",
   },
   {
     company: "Ecentials",
     role: "Mobile Developer",
     period: "Jun 2022 – Feb 2024",
     type: "work",
+    location: "United States - Remote",
   },
   {
     company: "Wi-flix",
     role: "Full-stack Developer",
     period: "Jan 2022 – Jan 2023",
     type: "work",
+    location: "Hoofddorp, Netherlands - Remote",
   },
   {
     company: "Bismuth Technologies",
     role: "Software Developer",
     period: "Apr 2021 – Dec 2021",
     type: "work",
+    location: "United States - Remote",
   },
 ];
 

@@ -34,6 +34,9 @@ export default function Experience() {
                         {exp.company}
                       </h3>
                       <p className="text-xs md:text-sm text-mid-grey">
+                        {exp.location}
+                      </p>
+                      <p className="text-xs md:text-sm text-mid-grey">
                         {exp.role}
                       </p>
                     </div>
