@@ -112,7 +112,9 @@ export default function About() {
                 <span className="font-mono text-[10px] tracking-widest text-carbon/40 uppercase block mb-2">
                   EXP
                 </span>
-                <p className="text-sm font-medium text-carbon">5+ Years</p>
+                <p className="text-sm font-medium text-carbon">
+                  {ABOUT.experience.years}
+                </p>
                 <p className="text-xs text-mid-grey">Software Engineering</p>
               </div>
             </div>

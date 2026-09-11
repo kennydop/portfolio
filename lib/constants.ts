@@ -19,10 +19,14 @@ export const PERSONAL = {
   uptime: "99.9%",
 };
 
+export const experience = {
+  years: "6+",
+};
+
 export const ABOUT = {
   id: "KD-153-14M90D",
-  summary:
-    "Software Engineer with 5 years of experience building scalable web applications, mobile apps, and interactive game experiences. Owns features end-to-end, writes maintainable code, and collaborates across design and product. Focused on performance, reliability, and clear technical design.",
+  experience,
+  summary: `Software Engineer with ${experience.years} years of experience building scalable web applications, mobile apps, and interactive game experiences. Owns features end-to-end, writes maintainable code, and collaborates across design and product. Focused on performance, reliability, and clear technical design.`,
   education: {
     degree: "BSc. Computer Science",
     institution: "University of Cape Coast",
