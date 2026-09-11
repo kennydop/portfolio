@@ -26,7 +26,7 @@ export const experience = {
 export const ABOUT = {
   id: "KD-153-14M90D",
   experience,
-  summary: `Software Engineer with ${experience.years} years of experience building scalable web applications, mobile apps, and interactive game experiences. Owns features end-to-end, writes maintainable code, and collaborates across design and product. Focused on performance, reliability, and clear technical design.`,
+  summary: `Founding/Software Engineer with ${experience.years} years of experience building scalable web applications, mobile apps, and interactive game experiences. Owns features end-to-end, writes maintainable code, and collaborates across design and product. Focused on performance, reliability, and clear technical design.`,
   education: {
     degree: "BSc. Computer Science",
     institution: "University of Cape Coast",
@@ -234,6 +234,7 @@ export const DOMAINS: { id: string; label: string; items: string[] }[] = [
     label: "DOMAINS",
     items: [
       "Payment systems (Stripe)",
+      "AI Agents",
       "AI/ML integration",
       "Streaming & CDN",
       "IoT & embedded",
@@ -275,7 +276,7 @@ export interface Experience {
 export const EXPERIENCE: Experience[] = [
   {
     company: "TopXperience",
-    role: "Software Engineer",
+    role: "Founding Engineer",
     period: "Nov 2024 – Present",
     type: "work",
     location: "Smyrna, United States - Remote",
