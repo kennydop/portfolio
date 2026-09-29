@@ -322,7 +322,7 @@ export const PROJECTS: Project[] = [
   {
     name: "MySapienta",
     description:
-      "AI-powered school workspace platform powering 10+ schools and 5,000+ users with intelligent learning and administration tools.",
+      "AI-powered school workspace for learning and administration, used by teachers, students, and school staff.",
     tags: ["AI", "SaaS"],
     url: "https://mysapienta.com",
   },
