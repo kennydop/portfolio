@@ -15,7 +15,7 @@ export const PERSONAL = {
   discord: "https://discord.com/users/kennydop",
   resumeUrl: "/Patrick_Offei_Danso_Resume.pdf",
   status: "BUILDING",
-  load: "80%",
+  load: "30%",
   uptime: "99.9%",
 };
 
@@ -275,9 +275,16 @@ export interface Experience {
 
 export const EXPERIENCE: Experience[] = [
   {
+    company: "MySapienta",
+    role: "Co-founder & Lead Engineer",
+    period: "Nov 2024 – Present",
+    type: "work",
+    location: "Accra, Ghana",
+  },
+  {
     company: "TopXperience",
     role: "Founding Engineer",
-    period: "Nov 2024 – Present",
+    period: "Oct 2024 – Sep 2026",
     type: "work",
     location: "Smyrna, United States - Remote",
   },
@@ -320,11 +327,11 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    name: "MySapienta",
+    name: "Okpo Tyre",
     description:
-      "AI-powered school workspace for learning and administration, used by teachers, students, and school staff.",
-    tags: ["AI", "SaaS"],
-    url: "https://mysapienta.com",
+      "Comic-book-styled 3D browser game where young Ghanaian hunters stalk birds with stones and catapults through a streamed forest around the village of Nkoso. Reached 300+ players in its first week after launch.",
+    tags: ["Game", "Three.js", "TypeScript"],
+    url: "https://okpotyre.com",
   },
   {
     name: "Loqie",
